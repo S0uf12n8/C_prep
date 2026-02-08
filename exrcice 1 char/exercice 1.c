@@ -24,7 +24,7 @@ char** lirePhrases(int n){
 void trierParLongueur(char** tab,int n){
 	int j,i;
 	char *tmp;
-	
+	/*==== sort by string lengthg====*/
 	for(i=0;i<n-1;i++){
 		for(j=i+1;j<n;j++){
 			if(strlen(tab[i])>strlen(tab[j])){
@@ -36,17 +36,41 @@ void trierParLongueur(char** tab,int n){
 	}
 	
 }
-
+/*========= function of fusionner ================*/
 char* fusionner(char **tab,int n,char separatuer){
-	int i;
-	char *phrase;
-	
+	int i
+
 	for(i=0;i<n;i++){
+			strcat(tab[i], seprateur);
 		
 	}
+	
+	return phrase;
 }
 
 void liberer(char **tab,int n){
+	int i;
+	for(i=0;i<n;i++){
+		free(tab[i]);
+	}
+	free(tab);
+	
+	
+}
+
+int main(){
+	char seprateur[10];
+	char **tab;
+	char *phrase;
+	
+
+	printf("donner le separtauer : ");
+	scanf("%s",separateur);
+	tab =lirePhrases(n);
+	trierParLongueur(tab,n);
+	phrase = fusionner(tab,n,separateur);
+	liberer(tab,n);
+	free(phrase);
 	
 	
 }
